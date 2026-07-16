@@ -492,34 +492,37 @@ def quiz(quiz_id):
         return redirect(url_for('end_page'))
 
 
-    cur.execute("SELECT * FROM users WHERE quiz_id = ?",(quiz_id,))
-    user = cur.fetchone()
+    try :
+        cur.execute("SELECT * FROM users WHERE quiz_id = ?",(quiz_id,))
+        user = cur.fetchone()
 
-    user_info = []
+        user_info = []
 
-    for usr in user :
-        user_info.append(usr)
+        for usr in user :
+            user_info.append(usr)
 
-    if user_info[6] <= 0 :
-        return redirect(url_for("border"))
-
-
-    cur.execute("SELECT * FROM question WHERE quiz_id = ?", (quiz_id,))
-    questions = cur.fetchall()
-
-    cur.execute("SELECT * FROM quiz WHERE quiz_id = ?", (quiz_id,))
-    quiz = cur.fetchone()
+        if user_info[6] <= 0 :
+            return redirect(url_for("border"))
 
 
-    quiz_list = []
+        cur.execute("SELECT * FROM question WHERE quiz_id = ?", (quiz_id,))
+        questions = cur.fetchall()
 
-    for quiz_item in quiz :
-        quiz_list.append(quiz_item)
+        cur.execute("SELECT * FROM quiz WHERE quiz_id = ?", (quiz_id,))
+        quiz = cur.fetchone()
 
-    ques = []
 
-    for q in questions:
-        ques.append(list(q))
+        quiz_list = []
+
+        for quiz_item in quiz :
+            quiz_list.append(quiz_item)
+
+        ques = []
+
+        for q in questions:
+            ques.append(list(q))
+    except :
+        return "هیچ آزمونی وجود ندارد ."
     
 
 
@@ -563,12 +566,8 @@ def quiz(quiz_id):
                 a += 1
 
 
-            cur.execute("SELECT number_true FROM students WHERE name = ?",(name_s,))
-            number_true = cur1.fetchone()
 
-            if number_true:
-                number_true += s
-
+            cur.execute("UPDATE number_true FROM students WHERE name = ?",(name_s,))
 
             cur.execute("INSERT INTO students (name , score , nFalseItem, quiz_id , all_score , error , number_true) VALUES (? , ? , ? , ? , ? , ? , ?)", (name_s, s, k, window_url , a, error , s))
             conn.commit()
@@ -594,38 +593,42 @@ def quiz_math(quiz_id):
     if enter_quiz == quiz_id:
         return redirect(url_for('end_page'))
 
-    cur.execute("SELECT * FROM users WHERE quiz_id = ?",(quiz_id,))
-    user = cur.fetchone()
+    try :
+        cur.execute("SELECT * FROM users WHERE quiz_id = ?",(quiz_id,))
+        user = cur.fetchone()
 
-    user_info = []
+        user_info = []
 
-    for usr in user :
-        user_info.append(usr)
-
-
-    if user_info[7] <= 0 :
-        return redirect(url_for("border"))
-
-    cur2.execute("SELECT * FROM question WHERE quiz_id = ?", (quiz_id,))
-    questions = cur2.fetchall()
-
-    cur.execute("SELECT * FROM quiz WHERE quiz_id = ?", (quiz_id,))
-    quiz = cur.fetchone()
+        for usr in user :
+            user_info.append(usr)
 
 
-    
+        if user_info[7] <= 0 :
+            return redirect(url_for("border"))
 
-    quiz_list = []
+        cur2.execute("SELECT * FROM question WHERE quiz_id = ?", (quiz_id,))
+        questions = cur2.fetchall()
 
-    for quiz_item in quiz :
-        quiz_list.append(quiz_item)
+        cur.execute("SELECT * FROM quiz WHERE quiz_id = ?", (quiz_id,))
+        quiz = cur.fetchone()
+
+
+        
+
+        quiz_list = []
+
+        for quiz_item in quiz :
+            quiz_list.append(quiz_item)
 
 
 
-    ques = []
+        ques = []
 
-    for q in questions:
-        ques.append(q)
+        for q in questions:
+            ques.append(q)
+
+    except :
+        return "هیچ آزمونی وجود ندارد ."
 
 
 
