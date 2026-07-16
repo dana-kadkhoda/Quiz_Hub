@@ -442,8 +442,6 @@ def send_data_math():
             session["quiz_name"] = quiz_name
 
 
-
-
             for i in range(len(text_qu)) :
                 for txt in text_qu:
 
@@ -454,6 +452,8 @@ def send_data_math():
 
 
                     for item in items:
+                        item = item.replace("×" , "")
+                        item = item.replace("\n" , "")
                         cur.execute(f"UPDATE question SET option_{n} = ? WHERE question = ?", (item, txt))
                         n += 1
                         if n == 5:
@@ -471,46 +471,6 @@ def send_data_math():
                     select_val = select_val[1:]
                     text_qu = text_qu[1:]
 
-
-            
-            cur2.execute("SELECT * FROM question WHERE quiz_id = ?", (quiz_id,))
-            questions = cur2.fetchall()
-
-
-            ques = []
-
-            for q in questions:
-                ques.append(q)
-
-
-            r = 0
-
-            for b in ques :
-            
-                for q in b :
-                    
-                    r += 1
-
-                    if r >= 3 :
-
-                        q = str(q)
-                        q = q.replace("×" , "")
-                        q = q.replace("×" , "")
-                        q = q.replace("\n" , "")
-
-                        if r == 7 :
-                            cur3.execute("UPDATE question SET true_option = ? WHERE quiz_id = ?",(q,quiz_id))
-                            conn.commit()
-                        else :
-                            cur3.execute(f"UPDATE question SET option_{r} = ? WHERE quiz_id = ?",(q,quiz_id))
-                            conn.commit()
-
-            cur2.execute("SELECT * FROM question WHERE quiz_id = ?", (quiz_id,))
-            qqqqq = cur2.fetchall()
-
-            print(qqqqq)
-
-            conn.commit()
 
             
             username = session.get("password_login")
@@ -570,7 +530,7 @@ def quiz(quiz_id):
             name_s = d.get("nameS")
             window_url = d.get("windowURL")
             error = d.get("error")
-    
+
 
 
             session['enter_quiz'] = quiz_id
@@ -666,7 +626,6 @@ def quiz_math(quiz_id):
 
     for q in questions:
         ques.append(q)
-
 
 
 
