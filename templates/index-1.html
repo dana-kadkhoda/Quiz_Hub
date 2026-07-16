@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آزمون</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  </head>
+  <body>
+    <div class="timer-con">
+      <span class="son">00</span>
+      <span>:</span>
+      <span class="min">00</span>
+    </div>
+    <div class="con" id="c">
+
+      <div class="con-qu">
+        <label for="name">نام و نام خانوادگی :</label>
+        <input type="text" name="name" id="name">
+        <div class="start-end-time">
+          <p>{{ quiz_list[2] }}</p>
+          <p>مدت آزمون : <span>{{ quiz_list[4] }}</span> دقیقه</p>
+          <p class="end-time">{{ quiz_list[3] }}</p>
+        </div>
+      </div>
+
+      <div class="con-btn">
+        <button class="prv">قبلی</button>
+        <button class="next">بعدی</button>
+      </div>
+
+      {% for q in ques %}
+      <div class="con-qu">
+        <p class="text-qu">$$ {{ q[2] }} $$</p>
+        <div class="con-item">
+          <input type="radio" name="option{{ q[0] }}" id="option{{ q[0] }}" />
+          <label for="option{{ q[0] }}">$$ {{ q[3] }} $$</label>
+        </div>
+        <div class="con-item">
+          <input type="radio" name="option{{ q[0] }}" id="option{{ q[0]+1 }}m" />
+          <label for="option{{ q[0]+1 }}m">$$ {{ q[4] }} $$</label>
+        </div>
+        <div class="con-item">
+          <input type="radio" name="option{{ q[0] }}" id="option{{ q[0]+2 }}a" />
+          <label for="option{{ q[0]+2 }}a">$$ {{ q[5] }} $$</label>
+        </div>
+        <div class="con-item">
+          <input type="radio" name="option{{ q[0] }}" id="option{{ q[0]+3 }}n" />
+          <label for="option{{ q[0]+3 }}n">$$ {{ q[6] }} $$</label>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+    <button id="sub-btn" class="sub-btn" type="submit">پایان آزمون</button>
+
+    <script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+        document.querySelectorAll('label').forEach(el => {
+          el.dataset.original = el.textContent;
+        });
+
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\(", right: "\\)", display: false}
+          ],
+          throwOnError: false
+        });
+      });
+
+
+    </script>
+  </body>
+</html>

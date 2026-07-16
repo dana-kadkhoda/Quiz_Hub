@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پایان ساخت آزمون</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+</head>
+<body>
+    <div class="con">
+        <h1>برای ورود به آزمون به عنوان شرکت کننده روی لینک زیر کلیک کنید .</h1>
+        <div>
+          <a href="/quiz/student/{{ quiz_id }}{{ r }}">ورود به آزمون</a>
+          <a href="/">صفحه اصلی</a>
+        </div>
+      </div>
+  
+      <div class="box">
+  
+      </div>
+</body>
+</html>

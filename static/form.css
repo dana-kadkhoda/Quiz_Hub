@@ -1,0 +1,200 @@
+@media (max-width: 540px) {
+  #form-container {
+    width: 450px !important;
+    padding: 18px 25px !important;
+  }
+}
+
+@media (max-width: 470px) {
+  #form-container {
+    width: 420px !important;
+    padding: 15px 22px !important;
+  }
+
+  .loading-container img {
+    width: 300px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  #form-container {
+    width: 340px !important;
+    padding: 12px 12px !important;
+  }
+
+  p {
+    padding: 6px !important;
+    font-size: 14px !important;
+  }
+
+  .loading-container img {
+    width: 300px !important;
+  }
+}
+
+@media (max-height: 600px){
+  html {
+    font-size: 12px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* بک‌گراند */
+body {
+  background: linear-gradient(135deg, #1d384f, #1e3a8a);
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* کانتینر */
+#form-container {
+  width: 26.3rem;
+  padding: 2rem;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* عنوان */
+.form-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+/* لیبل */
+label {
+  display: block;
+  color: #cbd5f5;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* اینپوت */
+.input-box {
+  width: 100%;
+  padding: 0.8rem 1rem;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+
+  outline: none;
+  transition: 0.25s;
+}
+
+.input-box::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.input-box:focus {
+  background: rgba(255,255,255,0.25);
+  border-color: #60a5fa;
+}
+
+/* راهنما */
+h3 {
+  margin-top: 1.5rem;
+  color: #93c5fd;
+  text-align: center;
+}
+
+p {
+  margin-top: 0.5rem;
+  padding: 0.6rem;
+
+  border-radius: 8px;
+  background: rgba(34,197,94,0.3);
+  color: #dcfce7;
+  text-align: center;
+
+  border: 1px solid rgba(34,197,94,0.4);
+}
+
+/* دکمه */
+.rejister-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.rejister-btn:hover {
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+
+.rejister-btn:active {
+  scale: 0.97;
+}
+
+/* لینک */
+.link-to-login {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.link-to-login:hover {
+  text-decoration: underline;
+}
+
+/* لودینگ */
+.loading-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(6px);
+}
+
+.loading-container img {
+  width: 18.8rem;
+}
+
+.hiden {
+  display: none;
+}
+
+/* ریسپانسیو */
+@media (max-width: 500px) {
+  #form-container {
+      width: 90%;
+      padding: 1.5rem;
+  }
+}

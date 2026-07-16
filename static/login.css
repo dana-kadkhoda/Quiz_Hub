@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* بک‌گراند گرادینتی */
+body {
+  background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ریسپانسیو */
+@media (max-width: 1250px){
+    html {
+        font-size: 12px;
+    }
+
+    .audio-play {
+        display: none !important;
+    }
+}
+
+@media (max-width: 920px){
+    html {
+        font-size: 10px;
+    }
+
+    a {
+        padding: 0.7rem 1.8rem !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .con div:last-child div:nth-child(2) {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 780px){
+    html {
+        font-size: 12px;
+    }
+
+    body {
+        padding: 2rem;
+    }
+
+    .con {
+        padding: 1.5rem 1.8rem !important;
+    }
+
+    h1 {
+        font-size: 2.3rem !important;
+    }
+
+    .con div:last-child {
+        gap: 15px !important;
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem !important;
+        margin-bottom: 3.8rem !important;
+        line-height: 35px !important;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .con {
+        padding: 0.8rem 0.3rem !important;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    a {
+        padding: 0.5rem 1.2rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-height: 600px) {
+    .con {
+        margin-top: 7rem;
+    }
+}
+
+@media (max-height: 520px) {
+    .con {
+        margin-top: 9rem;
+    }
+}
+
+
+/* کانتینر شیشه‌ای */
+.con {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    padding: 1.8rem 2rem;
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* عنوان */
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    font-size: 2.5rem;
+}
+
+h1 span {
+    color: #b4f7ce;
+}
+
+/* دکمه‌ها */
+.con div:last-child {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.7rem;
+}
+
+a {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.25s ease;
+}
+
+/* هاور */
+a:hover {
+    background: rgba(255,255,255,0.35);
+    transform: translateY(-3px);
+}
+
+/* کلیک */
+a:active {
+    transform: scale(0.95);
+}
+
+/* نوار بالا */
+.con-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.con-title .title {
+    font-size: 2rem;
+}
+
+.audio-play {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 6px;
+    border: none;
+    background-color: #1E3A8A;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+}

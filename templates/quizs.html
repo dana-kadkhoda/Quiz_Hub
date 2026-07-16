@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>آزمون ها</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='quizs.css') }}"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+  </head>
+  <body>
+    <h1>به بخش آزمون ها خوش آمدید !  📄</h1>
+
+    <div>
+
+      <ul>
+
+        {% for q in quizs %}
+          <li><a href="/quiz/student/{{ q[0] }}">آزمون</a></li>  
+        {% endfor %}
+      
+      </ul>
+      </div>
+
+    <script>
+        let links = document.querySelectorAll("a")
+
+        if (links.length === 0){
+            alert("هیچ آزمونی وجود ندارد .")
+
+            window.location.href = "/"
+        }
+    </script>
+  </body>
+</html>

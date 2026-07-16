@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* استایل‌های مخصوص چاپ */
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: 'Tahoma', sans-serif; /* در واقع باید فونت فارسی لود کنی */
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            margin-bottom: 30px;
+        }
+        .question-container {
+            margin-bottom: 40px;
+            page-break-inside: avoid; /* جلوگیری از نصف شدن سوال در دو صفحه */
+        }
+        .question-text {
+            font-size: 16pt;
+            margin-bottom: 10px;
+        }
+        .math-image {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ title }}</h1>
+    </div>
+
+
+    {% for q in test %}
+    <div class="con-qu">
+      <p class="text-qu" style="text-align: right;">{{ q[2] }}</p>
+      <div class="con-item">
+        <input type="radio" name="option{{ q[0] }}" id="option{{ q[0] }}" />
+        <label for="option{{ q[0] }}">{{ q[3] }}</label>
+      </div>
+      <div class="con-item">
+        <input type="radio" name="option{{ q[0] }}" id="option{{ q[0]+1 }}m" />
+        <label for="option{{ q[0]+1 }}m">{{ q[4] }}</label>
+      </div>
+      <div class="con-item">
+        <input type="radio" name="option{{ q[0] }}" id="option{{ q[0]+2 }}a" />
+        <label for="option{{ q[0]+2 }}a">{{ q[5] }}</label>
+      </div>
+      <div class="con-item">
+        <input type="radio" name="option{{ q[0] }}" id="option{{ q[0]+3 }}n" />
+        <label for="option{{ q[0]+3 }}n">{{ q[6] }}</label>
+      </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

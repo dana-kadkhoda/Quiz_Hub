@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تنطیمات آزمون</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='setting.css') }}"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+  </head>
+  <body>
+    <header>
+      <h1>⚙️ تنطیمات آزمون :</h1>
+    </header>
+
+    <form>
+      <div>
+        <label>مدت آزمون (دقیقه) :</label>
+        <input type="number" class="time" required />
+      </div>
+      <div class="container">
+        <div class="date">
+          <label class="time">زمان شروع آزمون :</label>
+          <div>
+            <label>سال</label>
+            <select id="startyear">
+              <option value="1403">1403</option>
+              <option value="1404">1404</option>
+              <option value="1405">1405</option>
+              <option value="1406">1406</option>
+              <option value="1407">1407</option>
+              <option value="1408">1408</option>
+            </select>
+          </div>
+
+          <div>
+            <label>ماه</label>
+            <select id="startmonth">
+              <option value="فروردین">فروردین</option>
+              <option value="اردیبهشت">اردیبهشت</option>
+              <option value="خرداد">خرداد</option>
+              <option value="تیر">تیر</option>
+              <option value="مرداد">مرداد</option>
+              <option value="شهریور">شهریور</option>
+              <option value="مهر">مهر</option>
+              <option value="آبان">آبان</option>
+              <option value="آذر">آذر</option>
+              <option value="دی">دی</option>
+              <option value="بهمن">بهمن</option>
+              <option value="اسفند">اسفند</option>
+            </select>
+          </div>
+
+          <div>
+            <label>روز</label>
+            <input type="number" max="31" min="1" id="startday" required />
+          </div>
+
+          <div>
+            <label>ساعت</label>
+            <select id="starthur">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="00">00</option>
+            </select>
+          </div>
+
+          <div>
+            <label>دقیقه</label>
+            <select id="startmin">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="date">
+          <label class="time">زمان پایان آزمون :</label>
+          <div>
+            <label>سال</label>
+            <select id="endyear">
+              <option value="1403">1403</option>
+              <option value="1404">1404</option>
+              <option value="1405">1405</option>
+              <option value="1406">1406</option>
+              <option value="1407">1407</option>
+              <option value="1408">1408</option>
+            </select>
+          </div>
+
+          <div>
+            <label>ماه</label>
+            <select id="endmonth">
+              <option value="فروردین">فروردین</option>
+              <option value="اردیبهشت">اردیبهشت</option>
+              <option value="خرداد">خرداد</option>
+              <option value="تیر">تیر</option>
+              <option value="مرداد">مرداد</option>
+              <option value="شهریور">شهریور</option>
+              <option value="مهر">مهر</option>
+              <option value="آبان">آبان</option>
+              <option value="آذر">آذر</option>
+              <option value="دی">دی</option>
+              <option value="بهمن">بهمن</option>
+              <option value="اسفند">اسفند</option>
+            </select>
+          </div>
+
+          <div>
+            <label>روز</label>
+            <input type="number" max="31" min="1" id="endday" required />
+          </div>
+
+          <div>
+            <label>ساعت</label>
+            <select id="endhur">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="00">0</option>
+            </select>
+          </div>
+
+          <div>
+            <label>دقیقه</label>
+            <select id="endmin">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="info">
+          <h4>تدابیر امنیتی</h4>
+          <ul>
+            <li>اطلاع از وارد شدن بیش از یک بار دانش آموز</li>
+            <li>جلوگیری از باز کردن تب دیگر در حین آزمون</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="dis">
+            🔸شما می توانید تعداد گزینه های درست و غلط هر دانش آموز را که در
+            صفحه نمرات دانش آموزان برای شما می آید ببینید .🔸
+          </p>
+          <p class="dis">
+            🔸ساخت آزمون ساده با این وب سایت کاملا رایگان است . اما برای ساخت
+            آزمون ریاضی با این وب سایت باید اشتراک داشته باشید .🔸
+          </p>
+        </div>
+      </div>
+
+      <button type="button" class="sub-btn">ساخت آزمون</button>
+    </form>
+
+    <script>
+      let sendbtn = document.querySelector(".sub-btn");
+
+      sendbtn.addEventListener("click", () => {
+        let startyear = document.getElementById("startyear");
+        let startmonth = document.getElementById("startmonth");
+        let startday = document.getElementById("startday").value;
+        let starthur = document.getElementById("starthur");
+        let startmin = document.getElementById("startmin");
+        
+        
+        let endyear = document.getElementById("endyear");
+        let endmonth = document.getElementById("endmonth");
+        let endday = document.getElementById("endday").value;
+        let endhur = document.getElementById("endhur");
+        let endmin = document.getElementById("endmin");
+        
+
+        let time = document.querySelector(".time").value;
+
+        if (time.trim() != "" && endday.trim() != "" && startday.trim() != "" && endday <= 31 && startday <= 31) {
+          startyear = startyear.options[startyear.selectedIndex].text;
+          startmonth = startmonth.options[startmonth.selectedIndex].text;
+          starthur = starthur.options[starthur.selectedIndex].text;
+          startmin = startmin.options[startmin.selectedIndex].text;
+
+          endyear = endyear.options[endyear.selectedIndex].text;
+          endmonth = endmonth.options[endmonth.selectedIndex].text;
+          endhur = endhur.options[endhur.selectedIndex].text;
+          endmin = endmin.options[endmin.selectedIndex].text;
+
+          switch (startmonth) {
+            case "فروردین":
+              startmonth = 1;
+              break;
+            case "ادیبهشت":
+              startmonth = 2;
+              break;
+            case "خرداد":
+              startmonth = 3;
+              break;
+            case "تیر":
+              startmonth = 4;
+              break;
+            case "مرداد":
+              startmonth = 5;
+              break;
+            case "شهریور":
+              startmonth = 6;
+              break;
+            case "مهر":
+              startmonth = 7;
+              break;
+            case "آبان":
+              startmonth = 8;
+              break;
+            case "آذر":
+              startmonth = 9;
+              break;
+            case "دی":
+              startmonth = 10;
+              break;
+            case "بهمن":
+              startmonth = 11;
+              break;
+            case "اسفند":
+              startmonth = 12;
+              break;
+          }
+
+          switch (endmonth) {
+            case "فروردین":
+              endmonth = 1;
+              break;
+            case "ادیبهشت":
+              endmonth = 2;
+              break;
+            case "خرداد":
+              endmonth = 3;
+              break;
+            case "تیر":
+              endmonth = 4;
+              break;
+            case "مرداد":
+              endmonth = 5;
+              break;
+            case "شهریور":
+              endmonth = 6;
+              break;
+            case "مهر":
+              endmonth = 7;
+              break;
+            case "آبان":
+              endmonth = 8;
+              break;
+            case "آذر":
+              endmonth = 9;
+              break;
+            case "دی":
+              endmonth = 10;
+              break;
+            case "بهمن":
+              endmonth = 11;
+              break;
+            case "اسفند":
+              endmonth = 12;
+              break;
+          }
+
+          fetch("/quiz/setting", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              startyear: startyear,
+              startmonth: startmonth,
+              startday: startday,
+              starthur: starthur,
+              startmin: startmin,
+
+              endyear: endyear,
+              endmonth: endmonth,
+              endday: endday,
+              endhur: endhur,
+              endmin: endmin,
+
+              time: time,
+            }),
+          });
+          window.location = "/end-page";
+        }else {
+          alert("لطفا تمام گزینه ها را پر کنید . \n لطفا همه گزینه ها را به صورت درست پر کنید .")
+        }
+      });
+    </script>
+  </body>
+</html>

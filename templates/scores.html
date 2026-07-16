@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scores.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+    <title>نمرات دانش آموزان</title>
+</head>
+<body>
+    <header>
+        <h1>💯 نمرات دانش آموزان :</h1>
+    </header>
+    <table>
+        <tr>
+            <td>نام و نام خانوادگی</td>
+            <td>تعداد درست ✅</td>
+            <td>تعداد نادرست ❌</td>
+            <td>نمره کل 💯</td>
+            <td>استفاده از برنامه های دیگه ⚠️</td>
+        </tr>
+
+        {% for st in student %}
+            <tr>
+                <td>{{ st[1] }}</td>
+                <td>{{ st[2] }}</td>
+                <td>{{ st[3] }}</td>
+                <td>{{ st[5] }}</td>
+                <td>{{ st[6] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

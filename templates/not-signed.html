@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عدم ثبت نام</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 680px) {
+        html {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .con div {
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 16px;
+        }
+      }
+
+      body {
+        background-color: rgb(104, 194, 164);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100dvh;
+      }
+      .con {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        padding: 1.2rem;
+        border-radius: 6px;
+        border: 1px solid black;
+        background-color: rgb(185, 231, 216);
+      }
+
+      .con h1 {
+        margin-bottom: 5rem;
+      }
+
+      .con div {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(0, 0, 73);
+        font-size: 1.2rem;
+        font-family: serif;
+        width: 100%;
+        background-color: rgb(188, 218, 236);
+        padding: 0.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="con">
+      <h1>کاربر گرامی لطفا قبلا از ورود به این صفحه ثبت نام کنید .</h1>
+      <div>
+        <a href="/quiz/teacher/signup">ثبت نام</a>
+        <a href="/quiz/teacher/login">ورود</a>
+      </div>
+    </div>
+  </body>
+</html>

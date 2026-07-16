@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='shop.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+</head>
+<body>
+    <div class="con-options">
+        <div class="card">
+            <img src="../static/images/bronze_banner.png" alt="option">
+            <div>
+                <h2><span>اشتراک برنزی</span> سایت تیچ آزمون</h2>
+                <h3 class="price">40,000 تومان</h3>
+                <p>50,000</p>
+            </div>
+            <button type="button" class="buy-option-btn"><a href="/payment">خرید اشتراک</a></button>
+        </div>
+        <div class="card">
+            <img src="../static/images/silver_banner.png" alt="option">
+            <div>
+                <h2><span>اشتراک نقره ای</span> سایت تیچ آزمون</h2>
+                <h3 class="price">110,000 تومان</h3>
+                <p>150,000</p>
+            </div>
+            <button type="button" class="buy-option-btn"><a href="/payment">خرید اشتراک</a></button>
+        </div>
+        <div class="card">
+            <img src="../static/images/gold_banner.png" alt="option">
+            <div>
+                <h2><span>اشتراک طلایی</span> سایت تیچ آزمون</h2>
+                <h3 class="price">230,000 تومان</h3>
+                <p>300,000</p>
+            </div>
+            <button type="button" class="buy-option-btn"><a href="/payment">خرید اشتراک</a></button>
+        </div>
+    </div>
+
+
+    <script>
+        let btnPrice = document.querySelectorAll(".buy-option-btn")
+
+        btnPrice.forEach((bp) => {
+            bp.addEventListener("click" , () => {
+                
+                let parBtn = bp.closest(".card")
+                let price = parBtn.querySelector(".price").innerHTML
+
+                price = price.replace("تومان" , "")
+                price = price.replace("," , "")
+
+                fetch("/shop" , {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        price: price.trim()
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    window.location.href = data.url
+                })
+
+            })
+        })
+    </script>
+</body>
+</html>

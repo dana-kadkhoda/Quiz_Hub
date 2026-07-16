@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تبدیل PDF به Word</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static' , filename = 'convert.css') }}"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <h2>فایل pdf را آپلود کنید .</h2>
+      <div class="help-con">
+        <p>توجه : حجم فایل باید کمتر از 4 مگابایت باشد .</p>
+        <p>
+          توجه : تبدیل pdf به word در این سایت برای pdf هایی با زبان فارسی توصیه
+          نمی شود
+        </p>
+      </div>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="con">
+          <input
+            type="file"
+            id="file"
+            name="pdf_file"
+            accept=".pdf,application/pdf"
+          />
+        </div>
+        <button type="submit" class="convert-btn">تبدیل فایل</button>
+      </form>
+    </div>
+  </body>
+</html>

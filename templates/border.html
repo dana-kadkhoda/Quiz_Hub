@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود به عنوان معلم</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='login.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='border.css') }}"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+  </head>
+  <body>
+    <header class="title">
+      <button class="log-out-btn">خروج ➡️</button>
+      <h1>👨‍💻 پروفایل شخصی معلم</h1>
+      <br />
+      <div class="info">
+        <p>تعداد آزمون های باقیمانده : <span class="number-quiz">{{ number_quiz }}</span></p>
+        <p>تعداد شرکت کنندگان باقیمانده : <span>{{ number_student }}</span></p>
+        <p>اشتراک فعال : <span class="active-option">{{ active_option }}</span></p>
+        <p>زمان باقیمانده اشتراک : <span>{{ left_time }}</span></p>
+      </div>
+    </header>
+    <div class="con">
+      <h1>برای ورود روی لینک زیر کلیک کنید .</h1>
+      <div>
+        <div>
+          <a href="/score/{{ quiz_id }}">نمرات دانش آموزان</a>
+        </div>
+        <div>
+          <a href="/quiz/teacher/manage-math" class="create-quiz-btn">ساخت آزمون ریاضی (ویژه)</a>
+        </div>
+
+        <div>
+          <a href="/quiz/teacher/manage" class="create-quiz-btn">ساخت آزمون</a>
+          <a href="/quiz/student/{{ quiz_id_for_border }}">آزمون شما</a>
+        </div>
+
+        <div>
+          <a href="/shop">فروشگاه</a>
+          <a href="/">صفحه اصلی</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const numberQuiz = document.querySelector(".number-quiz")
+      const createQuizBtn = document.querySelectorAll(".create-quiz-btn")
+      const logOutBtn = document.querySelector(".log-out-btn")
+
+      createQuizBtn.forEach((btn) => {
+        btn.addEventListener("click" , () => {
+        if (numberQuiz.innerHTML == 0) {
+          alert("سقف آزمون های شما تمام شده است لطفا برای تمدید به فروشگاه مراجعه فرمایید .")
+        }
+      })
+      })
+
+      logOutBtn.addEventListener("click" , () => {
+        fetch("/logout" , {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                  body: JSON.stringify({
+                      logout: true
+                  })
+        });
+
+        window.location = "/"
+      })
+    </script>
+  </body>
+</html>

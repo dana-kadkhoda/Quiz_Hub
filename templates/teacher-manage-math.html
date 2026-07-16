@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>طراحی آزمون</title>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='manage-math.css') }}" />
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+  </head>
+  <body>
+    <div class="quiz-name">
+      <div>
+        <div>
+          <label for="quiz-name-user">نام آزمون :</label>
+          <input
+            type="text"
+            required
+            id="quiz-name-user"
+            placeholder="مثلا : ریاضی"
+          />
+
+          <label for="quiz-pass-user">یک رمز برای آزمون انتخاب کنید:</label>
+          <input
+            type="text"
+            required
+            id="quiz-pass-user"
+            placeholder="مثلا : 1122"
+          />
+        </div>
+        <button class="next-level">مرحله بعد</button>
+      </div>
+    </div>
+
+    <main id="main">
+      <div class="cont" id="cont">
+        <form method="post" class="form">
+          <button type="button" class="close-btn">❌</button>
+
+          <div>
+            <div>
+              <label>متن سوال</label>
+              <input
+                type="text"
+                required
+                name="question"
+                placeholder="متن سوال خود را وارد کنید ..."
+                class="text-q"
+              />
+            </div>
+          </div>
+
+          <div class="math-con-for-text-qu">
+            <div>
+              <button type="button" class="radikal">√</button>
+
+              <button type="button" class="kasr">÷</button>
+
+              <button type="button" class="krosha">×</button>
+
+              <button type="button" class="darsad">[ ]</button>
+
+              <button type="button" class="radikal-3">∛</button>
+
+              <button type="button" class="binahayat">∞</button>
+
+              <button type="button" class="tavan">^</button>
+
+              <button type="button" class="txt">متن</button>
+            </div>
+
+            <button type="button" class="update-btn-qu">دیدن پیش نمایش متن سوال</button>
+
+            <div>
+              <h3 class="title-view">پیش نمایش سوال :</h3>
+              <h2 class="view-question"></h2>
+            </div>
+
+          </div>
+
+          <div class="cont-con">
+            <div class="con">
+              <label>گزینه ها</label>
+
+              <div>
+                <div class="options-con">
+                  <input
+                    type="text"
+                    required
+                    class="item"
+                    name="item1"
+                    placeholder="گزینه های سوال ..."
+                    value=""
+                  />
+
+                  <div class="math-con">
+                    <button type="button" class="radikal-q">√</button>
+
+                    <button type="button" class="kasr-q">÷</button>
+
+                    <button type="button" class="krorsha-q">×</button>
+
+                    <button type="button" class="darsad-q">[ ]</button>
+
+                    <button type="button" class="radikal-3-q">∛</button>
+
+                    <button type="button" class="binahayat-q">∞</button>
+
+                    <button type="button" class="tavan-q">^</button>
+                    
+                    <button type="button" class="txt-q">متن</button>
+                  </div>
+                </div>
+                <div>
+                  <button id="add-option" class="add-option" type="button">
+                    افزودن گزینه
+                  </button>
+                  <button class="update-btn" type="button">
+                    دیدن پیش نمایش
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="con-view">
+              <div>
+                <h3>پیش نمایش گزینه :</h3>
+                <h2 class="view"></h2>
+              </div>
+              <p class="clear-input">پاک کردن</p>
+            </div>
+          </div>
+
+          <div id="container-options"></div>
+
+          <div class="con-item-add">
+            <div class="con-t-s">
+              <p class="true-item">گزینه درست :</p>
+
+              <select id="select" name="select" class="select"></select>
+            </div>
+
+            <button type="button" class="item-btn">افزودن گزینه ها</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <button type="button" id="add-qu">اضافه کردن سوال</button>
+    <form method="post">
+      <button type="submit" class="send-btn">مرحله بعد</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='JS/manage-math.js') }}"></script>
+  </body>
+</html>

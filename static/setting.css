@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "par";
+    src: url(./fonts/Parastoo-VariableFont_wght.ttf);
+}
+
+body {
+    background:rgba(0, 0, 0, 0.4);
+    font-family: par;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+form {
+    margin-top: 7rem;
+    padding: 3rem;
+    background: linear-gradient(135deg,rgb(189, 189, 189),rgb(183, 183, 214));
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+input {
+    border: none;
+    padding: 6px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    font-family: vazir;
+    width: 5rem;
+}
+
+input:focus {
+    border: 1px solid green;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 2rem;
+}
+
+select {
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+option {
+    font-size: 16px;
+}
+
+.container div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container div label {
+    text-align: center;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time {
+    margin-top: 0.9rem;
+    font-family: par;
+}
+
+.info {
+    margin-top: 1rem;
+    border: 1px solid rgb(162, 35, 35);
+    padding: 1.4rem;
+}
+
+.info h4 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.sec {
+    margin-right: -2rem;
+}
+
+.dis {
+    font-size: 1.2rem;
+}
+
+.container:last-child {
+    justify-content: space-around;
+}
+
+.sub-btn {
+    font-family: par;
+    padding: 0.3rem;
+    margin-inline: 20rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: linear-gradient(130deg,rgba(241, 231, 140, 0.805),rgba(253, 161, 161, 0.829));
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به عنوان معلم</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+</head>
+
+<body>
+    <div id="form-container">
+        <form method="post">
+            <h2 class="form-title">ورود</h2>
+
+
+
+            <label for="full-name">نام و نام خانوادگی :</label>
+
+            <input type="text" name="username" id="full-name" placeholder="مثلا : علی نظری" class="input-box" autocomplete="off" required>
+
+
+
+            <label for="E-mail Address">ایمیل :</label>
+
+            <input type="email" name="email" id="E-mail Address" placeholder="info@gmail.com" class="input-box" required>
+
+
+
+            <label for="password">رمز عبور :</label>
+
+            <input type="password" name="password" id="password" placeholder="رمز عبور شما ..." class="input-box" autocomplete="off" required>
+
+            <h3>راهنما :</h3>
+            <p>{{ error }}</p>
+
+            <button type="submit" class="rejister-btn">ورود</button>
+        </form>
+
+        <a href="/quiz/teacher/signup" class="link-to-login">قبلا ثبت نام نکردم</a>
+
+
+        
+    </div>
+    
+    <div class="loading-container hiden">
+        <img src="{{ url_for('static', filename='gif/loading.gif') }}" alt="">
+    </div>
+    <script>
+        const form = document.getElementById("form-container")
+
+        form.addEventListener("submit" , (f) => {
+            f.preventDefault()
+
+            document.querySelector(".loading-container").classList.remove("hiden")
+            
+
+            setTimeout(() => {
+                document.querySelector("form").submit()
+            }, 3000)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+@media (max-height: 600px){
+  html {
+    font-size: 12px;
+  }
+}
+
+/* بک‌گراند دارک گرادیانی */
+body {
+  background: linear-gradient(135deg, #1d384f, #1e3a8a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* فرم شیشه‌ای */
+form {
+  width: 500px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* عنوان */
+h2 {
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* لیبل */
+label {
+  display: block;
+  text-align: right;
+  margin-bottom: 8px;
+  color: #cbd5f5;
+}
+
+/* اینپوت */
+input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  outline: none;
+
+  transition: 0.25s;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+input:focus {
+  background: rgba(255,255,255,0.25);
+  border-color: #60a5fa;
+}
+
+/* متن راهنما */
+h3 {
+  text-align: center;
+  color: #93c5fd;
+}
+
+p {
+  text-align: center;
+  margin: 10px 0 15px;
+  padding: 10px;
+
+  border-radius: 8px;
+  background: rgba(34, 197, 94, 0.3);
+  color: #dcfce7;
+
+  border: 1px solid rgba(34,197,94,0.4);
+}
+
+/* دکمه */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+
+  border-radius: 10px;
+  border: none;
+
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.4);
+  transform: translateY(-2px);
+}
+
+button:active {
+  scale: 0.97;
+}
+
+/* لینک */
+.link-to-login {
+  color: #93c5fd;
+  margin-top: 20px;
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.link-to-login:hover {
+  text-decoration: underline;
+}
+
+/* لودینگ */
+.loading-container {
+  width: 100%;
+  height: 100dvh;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+}
+
+.loading-container img {
+  width: 350px;
+}
+
+.hiden {
+  display: none !important;
+}
+
+/* ریسپانسیو (دست نخورده ولی هماهنگ شده) */
+@media (max-width: 540px) {
+  form {
+    width: 90% !important;
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  form {
+    padding: 15px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+
+  .loading-container img {
+    width: 250px !important;
+  }
+}

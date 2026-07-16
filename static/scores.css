@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@media (max-width: 600px) {
+    .table-container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 510px) {
+    td {
+        padding: 5px 10px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    td {
+        font-size: 14px;
+    }
+}
+
+/* بک‌گراند */
+body {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    min-height: 100dvh;
+    padding-bottom: 2rem;
+}
+
+
+
+/* هدر */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+header span {
+    color: #f43f5e;
+    font-weight: bold;
+}
+
+
+table{
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.417);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    border-collapse: collapse;
+    min-width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+td {
+    padding: 12px 20px;
+    text-align: center;
+    color: #e5e7eb;
+    background: rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.417);
+}
+
+/* هاور ردیف */
+tr:hover td {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ریسپانسیو */
