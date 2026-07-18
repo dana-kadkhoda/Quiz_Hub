@@ -844,18 +844,12 @@ def upload():
             else :
                 return "حجم فایل زیاد است ."
     return "ok"
-    
+
 
 @app.route("/convert")
 def convert():
     return render_template("convert.html")
 
-
-@app.route("/pdf")
-def pdf ():
-    cur.execute("SELECT * FROM question")
-    test = cur.fetchall()
-    return render_template("pdf.html" , test = test)
 
 
 if __name__ == ("__main__"):
