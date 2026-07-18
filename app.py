@@ -808,37 +808,48 @@ def upload():
             pdf_file_by.seek(0)
 
             if file_size < 4 :
-                with tempfile.TemporaryDirectory() as temp_dir:
 
-                    temp_pdf = os.path.join(temp_dir,"input.pdf")
-                    temp_word = os.path.join(temp_dir,"output.docx")
+                    try :
 
-                    with open(temp_pdf, 'wb') as f:
-                        f.write(pdf_file_by.getbuffer())
+                        temp_pdf = os.path.join('',"input.pdf")
+                        temp_word = os.path.join('',"output.docx")
 
+                        with open(temp_pdf, 'wb') as f:
+                            f.write(pdf_file_by.getbuffer())
+
+                        
+                        cv = Converter(temp_pdf)
+                        cv.convert(temp_word, start=0, end=-1)
+                        cv.close()
+
+                        with open(temp_word, 'rb') as f:
+                            word_file_by.write(f.read())
+
+                        word_file_by.seek(0)
+
+                        return send_file(
+                            word_file_by,
+                            mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            as_attachment=True,
+                            download_name='tich-azmoon_document.docx'
+                        )
+
+                    finally :
+
+                        if os.path.exists("input.pdf"):
+                            os.remove("input.pdf")
+                        if os.path.exists("output.docx"):
+                            os.remove("output.docx")
                     
-                    cv = Converter(temp_pdf)
-                    cv.convert(temp_word, start=0, end=-1)
-                    cv.close()
-
-                    with open(temp_word, 'rb') as f:
-                        word_file_by.write(f.read())
-
-                    word_file_by.seek(0)
-
-                    return send_file(
-                        word_file_by,
-                        mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                        as_attachment=True,
-                        download_name='tich-azmoon_document.docx'
-                    )
             else :
                 return "حجم فایل زیاد است ."
     return "ok"
+    
 
 @app.route("/convert")
 def convert():
     return render_template("convert.html")
+
 
 @app.route("/pdf")
 def pdf ():
